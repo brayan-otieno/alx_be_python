@@ -1,7 +1,7 @@
 def main():
     # Prompt for a single task
     task = input("Enter your task: ")
-    
+
     # Prompt for the task's priority
     priority = input("Priority (high/medium/low): ").lower()
 
@@ -17,16 +17,16 @@ def main():
         case "low":
             priority_message = "low priority task"
         case _:
-            priority_message = "unknown priority task"
+            priority_message = "unknown priority"
 
-    # Check if the task is time-bound
+    # Provide additional information if the task is time-bound
     if time_bound == "yes":
-        time_message = "that requires immediate attention today!"
+        time_message = "This task requires immediate attention today!"
     else:
-        time_message = "Consider completing it when you have free time."
+        time_message = "You can complete this task when you have time."
 
-    # Print the customized reminder message
-    print(f"Reminder: '{task}' is a {priority_message} {time_message}")
+    # Print the customized reminder
+    print(f"Reminder: '{task}' is a {priority_message}. {time_message}")
 
 if __name__ == "__main__":
     main()
