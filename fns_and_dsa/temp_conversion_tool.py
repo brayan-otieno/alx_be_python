@@ -9,14 +9,18 @@ def convert_to_celsius(fahrenheit):
     Convert temperature from Fahrenheit to Celsius using the global conversion factor.
     This function takes in Fahrenheit and returns the temperature in Celsius.
     """
-    return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
+    global FAHRENHEIT_TO_CELSIUS_FACTOR  # Accessing the global variable
+    celsius = (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
+    return celsius
 
 def convert_to_fahrenheit(celsius):
     """
     Convert temperature from Celsius to Fahrenheit using the global conversion factor.
     This function takes in Celsius and returns the temperature in Fahrenheit.
     """
-    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
+    global CELSIUS_TO_FAHRENHEIT_FACTOR  # Accessing the global variable
+    fahrenheit = (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
+    return fahrenheit
 
 def main():
     try:
@@ -29,17 +33,18 @@ def main():
         # Handling conversion based on user input
         if unit == 'F':
             celsius = convert_to_celsius(temperature)
-            print(f"{temperature}°F is {celsius}°C")
+            return f"{temperature}°F is {celsius}°C"
         elif unit == 'C':
             fahrenheit = convert_to_fahrenheit(temperature)
-            print(f"{temperature}°C is {fahrenheit}°F")
+            return f"{temperature}°C is {fahrenheit}°F"
         else:
             # Handle invalid unit input
-            print("Invalid input. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
+            return "Invalid input. Please enter 'C' for Celsius or 'F' for Fahrenheit."
     
     except ValueError:
         # Handle the case where the user enters a non-numeric value for temperature
-        print("Invalid temperature. Please enter a numeric value.")
+        return "Invalid temperature. Please enter a numeric value."
 
 if __name__ == "__main__":
-    main()
+    result = main()
+    print(result)  # Now the result is returned and printed in the main execution flow.
