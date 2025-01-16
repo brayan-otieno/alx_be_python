@@ -9,7 +9,6 @@ def convert_to_celsius(fahrenheit):
     Convert temperature from Fahrenheit to Celsius using the global conversion factor.
     This function takes in Fahrenheit and returns the temperature in Celsius.
     """
-    global FAHRENHEIT_TO_CELSIUS_FACTOR  # Accessing the global variable
     return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
 def convert_to_fahrenheit(celsius):
@@ -17,7 +16,6 @@ def convert_to_fahrenheit(celsius):
     Convert temperature from Celsius to Fahrenheit using the global conversion factor.
     This function takes in Celsius and returns the temperature in Fahrenheit.
     """
-    global CELSIUS_TO_FAHRENHEIT_FACTOR  # Accessing the global variable
     return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 
 def main():
