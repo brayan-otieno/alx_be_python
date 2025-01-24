@@ -1,24 +1,43 @@
 # Base class for Book
 class Book:
     def __init__(self, title, author):
+<<<<<<< HEAD
         self.title = title
         self.author = author
 
     def __str__(self):
+=======
+        """Constructor: Initializes the Book instance with title and author."""
+        self.title = title
+        self.author = author
+    
+    def __str__(self):
+        """String representation for the Book."""
+>>>>>>> 8a20141e46704b7df1e8dd178902557ef0d9d434
         return f"Book: {self.title} by {self.author}"
 
 # Derived class for EBook
 class EBook(Book):
     def __init__(self, title, author, file_size):
+<<<<<<< HEAD
         super().__init__(title, author)  # Call the base class constructor
         self.file_size = file_size
 
     def __str__(self):
+=======
+        """Constructor: Initializes EBook with title, author, and file size."""
+        super().__init__(title, author)  # Call the base class constructor
+        self.file_size = file_size  # EBook-specific attribute
+    
+    def __str__(self):
+        """String representation for EBook."""
+>>>>>>> 8a20141e46704b7df1e8dd178902557ef0d9d434
         return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
 
 # Derived class for PrintBook
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
+<<<<<<< HEAD
         super().__init__(title, author)  # Call the base class constructor
         self.page_count = page_count
 
@@ -34,6 +53,28 @@ class Library:
         self.books.append(book)
 
     def list_books(self):
+=======
+        """Constructor: Initializes PrintBook with title, author, and page count."""
+        super().__init__(title, author)  # Call the base class constructor
+        self.page_count = page_count  # PrintBook-specific attribute
+    
+    def __str__(self):
+        """String representation for PrintBook."""
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
+
+# Library class that uses composition to manage a collection of books
+class Library:
+    def __init__(self):
+        """Constructor: Initializes an empty list to store books."""
+        self.books = []
+    
+    def add_book(self, book):
+        """Adds a Book, EBook, or PrintBook to the library collection."""
+        self.books.append(book)
+    
+    def list_books(self):
+        """Prints details of each book in the library."""
+>>>>>>> 8a20141e46704b7df1e8dd178902557ef0d9d434
         for book in self.books:
             print(book)
 

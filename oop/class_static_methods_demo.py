@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Calculator:
     # Class attribute
     calculation_type = "Arithmetic Operations"
@@ -14,6 +15,23 @@ class Calculator:
         return a * b
 
 # main.py
+=======
+# Calculator class with static and class methods
+class Calculator:
+    calculation_type = "Arithmetic Operations"  # Class attribute
+    
+    @staticmethod
+    def add(a, b):
+        """Static method to add two numbers."""
+        return a + b
+    
+    @classmethod
+    def multiply(cls, a, b):
+        """Class method that uses a class attribute and multiplies two numbers."""
+        print(f"Calculation type: {cls.calculation_type}")
+        return a * b
+# main.py 
+>>>>>>> 8a20141e46704b7df1e8dd178902557ef0d9d434
 from class_static_methods_demo import Calculator
 
 def main():
